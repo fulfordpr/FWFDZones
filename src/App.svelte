@@ -62,6 +62,12 @@
 		<input type="text" bind:value={input} on:input={findZone} placeholder="ZONE (ex:S0100)">
 
 		<h3>{disZone}</h3>
+		<div id="colorkey">
+			<h5 class="sevenofour">704 Engine</h5>
+			<h5 class="sevenofive">705 Engine</h5>
+			<h5 class="sevenosix">706 Engines</h5>
+		</div>
+		
 	</div>
 	
 	{#if currentZone['1E'] !== undefined}
@@ -102,23 +108,23 @@
 			</div>
 
 			<div class='units'>
-				<h4>HAZMAT</h4>
+				<h4>LUCAS TOOL</h4>
 				<ol>
-					<li>HAZMAT: {currentZone['1HE']}</li>
-					<li>HAZMAT: {currentZone['2HE']}</li>
-					<li>HAZMAT: {currentZone['3HE']}</li>
+					<li>ENGINE: {currentZone['1HE']}</li>
+					<li>ENGINE: {currentZone['2HE']}</li>
+					<li>ENGINE: {currentZone['3HE']}</li>
 					{#if currentZone['4HE'] != undefined}
-						<li>HAZMAT: {currentZone['4HE']}</li>
+						<li>ENGINE: {currentZone['4HE']}</li>
 					{/if}
 				</ol>
 			</div>
 
 			<div class='units'>
-				<h4>RT</h4>
+				<h4>RAFT</h4>
 				<ol>
-					<li>RT: {currentZone['1RT']}</li>
-					<li>RT: {currentZone['2RT']}</li>
-					<li>RT: {currentZone['3RT']}</li>
+					<li>ENGINE: {currentZone['1RT']}</li>
+					<li>ENGINE: {currentZone['2RT']}</li>
+					<li>ENGINE: {currentZone['3RT']}</li>
 				</ol>
 			</div>
 
@@ -137,7 +143,7 @@
 
 
 <style>
-	@import url('https://fonts.googleapis.com/css2?family=Braah+One&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Braah+One&family=Open+Sans:wght@500;800&display=swap');
 	main {
 		/* text-align: center; */
 		padding: 0;
@@ -148,6 +154,7 @@
 		flex-direction: column;
 		justify-content: flex-start;
 		flex-basis: auto;
+		font-family: 'Open Sans', sans-serif;
 	}
 	
 	#logo{
@@ -158,6 +165,28 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+	}
+	#colorkey{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	
+	}
+
+	.sevenofour{
+		padding: 0 20px;
+		color: #c2a008;
+		font-size: 18px;
+	}
+	.sevenofive{
+		padding: 0 20px;
+		color: #f74f17;
+		font-size: 18px;
+	}
+	.sevenosix{
+		padding: 0 20px;
+		color: #ff0000;
+		font-size: 18px;
 	}
 
 	input{
@@ -177,10 +206,10 @@
 
 	h3 {
 		color: #ff3e00;
-		font-family: 'Braah One', sans-serif;
+		font-family: 'Open Sans', sans-serif;
 		text-transform: uppercase;
 		font-size: 2em;
-		font-weight: 400;
+		font-weight: 500;
 		text-align: center;
 		margin-bottom: 5px;
 	}
